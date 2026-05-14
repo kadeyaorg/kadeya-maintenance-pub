@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,11 +8,11 @@
 </head>
 <body>
   <header class="doc-header">
-    <h1>Onglet Valves</h1>
-    <p>Solénoïdes : publication sur <code>hmi/actuators_request</code>.</p>
+    <h1>Valves tab</h1>
+    <p>Solenoids: publishes to <code>hmi/actuators_request</code>.</p>
   </header>
-  <nav class="doc-nav" aria-label="Navigation documentation">
-    <a href="index.html">Accueil</a>
+  <nav class="doc-nav" aria-label="Documentation navigation">
+    <a href="index.html">Home</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="plc-reset.html">PLC Reset</a>
     <a href="doors.html">Doors</a>
@@ -26,20 +26,20 @@
   </nav>
   <main>
     <section>
-      <h2>Cases à cocher</h2>
-      <p>Sélectionnez une ou plusieurs vannes concernées par l’ouverture. Les noms correspondent aux sorties : Main, Still, Carb, Flavor 1 à 4.</p>
+      <h2>Checkboxes</h2>
+      <p>Select one or more valves to open. Names map to outputs: Main, Still, Carb, Flavor 1–4.</p>
     </section>
     <section>
-      <h2>Boutons</h2>
+      <h2>Buttons</h2>
       <dl class="button-list">
         <dt>Open selected</dt>
-        <dd>Construit un JSON avec l’état de chaque vanne : <code>true</code> pour les cases cochées (ouvert), <code>false</code> pour les autres, puis publie sur <code>hmi/actuators_request</code>.</dd>
+        <dd>Builds JSON with each valve state: <code>true</code> for checked (open), <code>false</code> for others, then publishes to <code>hmi/actuators_request</code>.</dd>
         <dt>Close all</dt>
-        <dd>Envoie la commande qui ferme toutes les vannes (indépendamment des cases).</dd>
+        <dd>Sends the command that closes all valves (regardless of checkboxes).</dd>
       </dl>
     </section>
-    <p class="note">Le détail exact du JSON est défini dans le module applicatif ; en cas de doute, corrélez avec le moniteur MQTT.</p>
+    <p class="note">Exact JSON details are defined in the application module; if unsure, correlate with the MQTT monitor.</p>
   </main>
-  <footer class="doc-footer"><a href="index.html">← Sommaire</a></footer>
+  <footer class="doc-footer"><a href="index.html">← Contents</a></footer>
 </body>
 </html>

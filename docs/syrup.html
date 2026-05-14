@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,11 +8,11 @@
 </head>
 <body>
   <header class="doc-header">
-    <h1>Onglet Syrup</h1>
-    <p>Gestion des niveaux BIB (F1 à F4) — commandes sur <code>hmi/syrup/command</code>.</p>
+    <h1>Syrup tab</h1>
+    <p>BIB level management (F1–F4) — commands on <code>hmi/syrup/command</code>.</p>
   </header>
-  <nav class="doc-nav" aria-label="Navigation documentation">
-    <a href="index.html">Accueil</a>
+  <nav class="doc-nav" aria-label="Documentation navigation">
+    <a href="index.html">Home</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="plc-reset.html">PLC Reset</a>
     <a href="doors.html">Doors</a>
@@ -26,17 +26,17 @@
   </nav>
   <main>
     <section>
-      <h2>Lignes F1 à F4</h2>
-      <p>Chaque ligne affiche une barre de progression (pourcentage restant), le texte « restant / capacité » en mL, et une alerte visuelle si le niveau est très bas.</p>
+      <h2>F1–F4 rows</h2>
+      <p>Each row shows a progress bar (remaining percent), “remaining / capacity” text in mL, and a visual alert when the level is very low.</p>
       <dl class="button-list">
         <dt>Adjust</dt>
-        <dd>Ouvre la fenêtre « Adjust Syrup Level » : saisie du <strong>remaining (mL)</strong> et de la <strong>capacity (mL)</strong>. <strong>OK</strong> valide (contrôles : restant entre 0 et capacité ; capacité entre 1000 et 20000 mL) et envoie la commande d’ajustement pour la ligne (F1–F4). <strong>Cancel</strong> ferme sans envoyer.</dd>
+        <dd>Opens “Adjust Syrup Level”: enter <strong>remaining (mL)</strong> and <strong>capacity (mL)</strong>. <strong>OK</strong> validates (remaining between 0 and capacity; capacity between 1000 and 20000 mL) and sends the adjust command for the row (F1–F4). <strong>Cancel</strong> closes without sending.</dd>
         <dt>Replace BIB</dt>
-        <dd>Demande une confirmation puis envoie une commande qui réinitialise le BIB de la ligne à pleine capacité (capacité lue depuis l’état courant, ou valeur par défaut 9500 mL si la capacité reçue est 0).</dd>
+        <dd>Asks for confirmation, then sends a command that resets the line BIB to full capacity (capacity read from current state, or default 9500 mL if received capacity is 0).</dd>
       </dl>
     </section>
-    <p class="note">Les pourcentages et mL reflètent les données reçues par MQTT ; après une commande, l’affichage se met à jour quand la machine publie le nouvel état.</p>
+    <p class="note">Percentages and mL reflect MQTT data; after a command, the display updates when the machine publishes new state.</p>
   </main>
-  <footer class="doc-footer"><a href="index.html">← Sommaire</a></footer>
+  <footer class="doc-footer"><a href="index.html">← Contents</a></footer>
 </body>
 </html>

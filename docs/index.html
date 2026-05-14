@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,12 +9,12 @@
 <body>
   <header class="doc-header">
     <h1>Go Maintenance — documentation</h1>
-    <p>Référence des écrans, onglets et actions de l’application Kadeya.</p>
+    <p>Reference for screens, tabs, and actions in the Kadeya application.</p>
   </header>
-  <nav class="doc-nav" aria-label="Navigation documentation">
-    <strong>Sommaire</strong>
+  <nav class="doc-nav" aria-label="Documentation navigation">
+    <strong>Contents</strong>
     <span aria-hidden="true">·</span>
-    <a href="index.html">Accueil</a>
+    <a href="index.html">Home</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="plc-reset.html">PLC Reset</a>
     <a href="doors.html">Doors</a>
@@ -28,53 +28,53 @@
   </nav>
   <main>
     <p class="note">
-      Cette documentation est publiée sur le dépôt public <strong>go-maintenance-pub</strong> (<code>docs/</code>). Sur GitHub, activez <strong>GitHub Pages</strong> avec le dossier <code>/docs</code> (voir le README du dépôt public).
+      This documentation is published in the public <strong>go-maintenance-pub</strong> repository (<code>docs/</code>). On GitHub, enable <strong>GitHub Pages</strong> with the <code>/docs</code> folder (see the public repository README).
     </p>
     <section>
-      <h2>À propos de l’application</h2>
+      <h2>About the application</h2>
       <p>
-        <strong>Go Maintenance</strong> est une console Windows qui se connecte au broker MQTT de la machine pour afficher l’état (dashboard), envoyer des commandes de maintenance (portes, robots, vannes, etc.) et inspecter les messages MQTT reçus par l’UI.
+        <strong>Go Maintenance</strong> is a Windows console that connects to the machine MQTT broker to show status (dashboard), send maintenance commands (doors, robots, valves, etc.), and inspect MQTT messages received by the UI.
       </p>
     </section>
     <section>
-      <h2>Écran de connexion (avant les onglets)</h2>
+      <h2>Connection screen (before tabs)</h2>
       <dl class="button-list">
         <dt>Check for updates</dt>
-        <dd>Ouvre la page des <a href="https://github.com/kadeyaorg/go-maintenance-pub/releases">releases GitHub</a> (dépôt public de distribution) dans le navigateur par défaut.</dd>
-        <dt>Boutons « IP : port » (connexions récentes)</dt>
-        <dd>Remplissent automatiquement les champs IP et port pour une reconnexion rapide (jusqu’à 3 entrées).</dd>
+        <dd>Opens the <a href="https://github.com/kadeyaorg/go-maintenance-pub/releases">GitHub releases</a> page (public distribution repository) in the default browser.</dd>
+        <dt>“IP : port” buttons (recent connections)</dt>
+        <dd>Fill the IP and port fields automatically for quick reconnect (up to 3 entries).</dd>
         <dt>Connect to Machine</dt>
-        <dd>Tente la connexion au broker, abonne l’application aux sujets MQTT nécessaires, enregistre la connexion dans les récents, puis affiche la barre latérale et les onglets.</dd>
+        <dd>Attempts broker connection, subscribes the app to the required MQTT topics, saves the connection in recents, then shows the sidebar and tabs.</dd>
       </dl>
     </section>
     <section>
-      <h2>En-tête après connexion</h2>
+      <h2>Header after connection</h2>
       <dl class="button-list">
         <dt>Check for updates</dt>
-        <dd>Même comportement que sur l’écran de connexion.</dd>
+        <dd>Same behavior as on the connection screen.</dd>
         <dt>Change Machine</dt>
-        <dd>Revient à l’écran de connexion (déconnexion MQTT, réinitialisation de l’affichage).</dd>
+        <dd>Returns to the connection screen (MQTT disconnect, UI reset).</dd>
         <dt>Disconnect</dt>
-        <dd>Demande une confirmation puis déconnecte et revient à l’écran de connexion.</dd>
+        <dd>Asks for confirmation, then disconnects and returns to the connection screen.</dd>
       </dl>
     </section>
     <section>
-      <h2>Navigation latérale (onglets)</h2>
-      <p>Chaque entrée ouvre l’onglet correspondant. La page détaille les contrôles propres à chaque onglet :</p>
+      <h2>Sidebar (tabs)</h2>
+      <p>Each entry opens the matching tab. Individual pages describe the controls for each tab:</p>
       <ul>
-        <li><a href="dashboard.html">Dashboard</a> — vue d’ensemble et alertes</li>
-        <li><a href="plc-reset.html">PLC Reset</a> — drapeaux de reset PLC</li>
-        <li><a href="doors.html">Doors</a> — ouverture / fermeture des portes</li>
-        <li><a href="robots.html">Robots</a> — bras Return et Dispense</li>
-        <li><a href="valves.html">Valves</a> — solénoïdes</li>
-        <li><a href="dispense.html">Dispense</a> — recettes de test</li>
-        <li><a href="washer.html">Washer</a> — lave-bouteilles</li>
-        <li><a href="syrup.html">Syrup</a> — niveaux BIB</li>
-        <li><a href="software.html">Software</a> — mises à jour et redémarrages</li>
-        <li><a href="mqtt-monitor.html">MQTT Monitor</a> — journal des messages</li>
+        <li><a href="dashboard.html">Dashboard</a> — overview and alerts</li>
+        <li><a href="plc-reset.html">PLC Reset</a> — PLC reset flags</li>
+        <li><a href="doors.html">Doors</a> — door open / close</li>
+        <li><a href="robots.html">Robots</a> — Return and Dispense arms</li>
+        <li><a href="valves.html">Valves</a> — solenoids</li>
+        <li><a href="dispense.html">Dispense</a> — test recipes</li>
+        <li><a href="washer.html">Washer</a> — bottle washer</li>
+        <li><a href="syrup.html">Syrup</a> — BIB levels</li>
+        <li><a href="software.html">Software</a> — updates and restarts</li>
+        <li><a href="mqtt-monitor.html">MQTT Monitor</a> — message log</li>
       </ul>
     </section>
   </main>
-  <footer class="doc-footer">Kadeya — Go Maintenance · documentation utilisateur.</footer>
+  <footer class="doc-footer">Kadeya — Go Maintenance · user documentation.</footer>
 </body>
 </html>

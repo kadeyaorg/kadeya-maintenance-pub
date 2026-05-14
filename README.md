@@ -1,24 +1,24 @@
 # go-maintenance-pub
 
-Dépôt **public** pour la distribution de **Go Maintenance** (binaires Windows et documentation HTML).
+**Public** repository for **Go Maintenance** distribution (Windows binaries and HTML documentation).
 
-Le code source et le développement se font sur le dépôt privé `go-maintenance` au sein de l’organisation ; ce dépôt ne contient pas les sources Go, seulement ce qui est utile aux utilisateurs et aux machines.
+Source code and development live in the private `go-maintenance` repository within the organization; this repo does not contain Go application sources, only what end users and machines need.
 
 ## Releases
 
-Les exécutables et archives pour mise à jour automatique sont publiés ici :
+Executables and archives for automated updates are published here:
 
 **[Releases — kadeyaorg/go-maintenance-pub](https://github.com/kadeyaorg/go-maintenance-pub/releases)**
 
 ## Documentation (GitHub Pages)
 
-La documentation de l’interface (HTML) est dans le dossier [`docs/`](./docs/). Sommaire : [`docs/index.html`](./docs/index.html).
+Interface documentation (HTML) is in the [`docs/`](./docs/) folder. Table of contents: [`docs/index.html`](./docs/index.html).
 
-Pour publier le site :
+To publish the site:
 
 1. **Settings → Pages**
-2. **Build and deployment** : *Deploy from a branch*
-3. Branche `main`, dossier **`/docs`**
-4. URL du site : `https://kadeyaorg.github.io/go-maintenance-pub/`
+2. **Build and deployment**: *Deploy from a branch*
+3. Branch `main`, folder **`/docs`**
+4. Site URL: `https://kadeyaorg.github.io/go-maintenance-pub/`
 
-La doc est mise à jour automatiquement lors de chaque release publiée depuis le dépôt source (workflow GitHub Actions).
+Docs are updated automatically when a release is published from the private source repo (GitHub Actions workflow).

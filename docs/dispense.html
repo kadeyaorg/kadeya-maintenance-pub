@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,11 +8,11 @@
 </head>
 <body>
   <header class="doc-header">
-    <h1>Onglet Dispense</h1>
-    <p>Recettes de test : envoi sur <code>hmi/dispense/request</code>.</p>
+    <h1>Dispense tab</h1>
+    <p>Test recipes: sends to <code>hmi/dispense/request</code>.</p>
   </header>
-  <nav class="doc-nav" aria-label="Navigation documentation">
-    <a href="index.html">Accueil</a>
+  <nav class="doc-nav" aria-label="Documentation navigation">
+    <a href="index.html">Home</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="plc-reset.html">PLC Reset</a>
     <a href="doors.html">Doors</a>
@@ -26,25 +26,25 @@
   </nav>
   <main>
     <section>
-      <h2>Groupe « Test Recipes »</h2>
-      <p>Chaque bouton correspond à une recette prédéfinie (débits FW/CW/F1–F4 et nombre de pulsations). Un clic sérialise la recette en JSON et la publie sur <code>hmi/dispense/request</code>.</p>
+      <h2>“Test Recipes” group</h2>
+      <p>Each button is a predefined recipe (FW/CW/F1–F4 flow rates and pulse count). A click serializes the recipe to JSON and publishes to <code>hmi/dispense/request</code>.</p>
       <dl class="button-list">
         <dt>Water</dt>
-        <dd>Recette eau (paramètres internes fixes dans l’application).</dd>
+        <dd>Water recipe (fixed internal parameters in the app).</dd>
         <dt>Carb Water</dt>
-        <dd>Recette eau gazeifiée.</dd>
+        <dd>Carbonated water recipe.</dd>
         <dt>Syrup 1</dt>
-        <dd>Recette sirop voie 1.</dd>
+        <dd>Syrup path 1 recipe.</dd>
         <dt>Syrup 2</dt>
-        <dd>Recette sirop voie 2.</dd>
+        <dd>Syrup path 2 recipe.</dd>
         <dt>Syrup 3</dt>
-        <dd>Recette sirop voie 3.</dd>
+        <dd>Syrup path 3 recipe.</dd>
         <dt>Syrup 4</dt>
-        <dd>Recette sirop voie 4.</dd>
+        <dd>Syrup path 4 recipe.</dd>
       </dl>
     </section>
-    <p class="note">À utiliser uniquement dans un contexte de test ou maintenance autorisé : la machine peut réellement distribuer du produit.</p>
+    <p class="note">Use only in authorized test or maintenance context: the machine may actually dispense product.</p>
   </main>
-  <footer class="doc-footer"><a href="index.html">← Sommaire</a></footer>
+  <footer class="doc-footer"><a href="index.html">← Contents</a></footer>
 </body>
 </html>

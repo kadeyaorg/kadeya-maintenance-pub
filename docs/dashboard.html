@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,11 +8,11 @@
 </head>
 <body>
   <header class="doc-header">
-    <h1>Onglet Dashboard</h1>
-    <p>Vue d’ensemble : états, métriques machine et problèmes actifs (lecture seule).</p>
+    <h1>Dashboard tab</h1>
+    <p>Overview: machine states, metrics, and active issues (read-only).</p>
   </header>
-  <nav class="doc-nav" aria-label="Navigation documentation">
-    <a href="index.html">Accueil</a>
+  <nav class="doc-nav" aria-label="Documentation navigation">
+    <a href="index.html">Home</a>
     <a href="dashboard.html" aria-current="page">Dashboard</a>
     <a href="plc-reset.html">PLC Reset</a>
     <a href="doors.html">Doors</a>
@@ -26,24 +26,24 @@
   </nav>
   <main>
     <section>
-      <h2>Rôle de l’onglet</h2>
+      <h2>Tab purpose</h2>
       <p>
-        Le <strong>Dashboard</strong> agrège des informations reçues par MQTT : cartes d’état pour le PLC, le module Dispense, le retour (Return), le lave-bouteilles (Washer), des compteurs / indicateurs machine, et une zone « Active issues » qui résume les blocages ou erreurs détectés.
+        The <strong>Dashboard</strong> aggregates information received over MQTT: status cards for the PLC, Dispense module, Return, bottle washer (Washer), machine counters / indicators, and an “Active issues” area summarizing detected blocks or errors.
       </p>
-      <p>Cet onglet ne contient <strong>aucun bouton d’action</strong> : tout est affiché en continu (rafraîchissement périodique lorsque la session est connectée).</p>
+      <p>This tab has <strong>no action buttons</strong>: everything updates continuously (periodic refresh while the session is connected).</p>
     </section>
     <section>
-      <h2>Zones affichées</h2>
+      <h2>Displayed areas</h2>
       <dl class="button-list">
-        <dt>Cartes PLC, Dispense, Return, Washer</dt>
-        <dd>Point coloré et libellé d’état ; la couleur reflète des mots-clés dans le texte (OK / avertissement / erreur).</dd>
-        <dt>Métriques (Dirty Bottles, Clean Bottles, Washer Index, Washer Opened, Maintenance Mode, Blocking Reason)</dt>
-        <dd>Valeurs issues de l’état machine ; « Blocking Reason » explique souvent pourquoi la maintenance ou un mouvement est bloqué.</dd>
+        <dt>PLC, Dispense, Return, Washer cards</dt>
+        <dd>Colored dot and status label; color reflects keywords in the text (OK / warning / error).</dd>
+        <dt>Metrics (Dirty Bottles, Clean Bottles, Washer Index, Washer Opened, Maintenance Mode, Blocking Reason)</dt>
+        <dd>Values from machine state; “Blocking Reason” often explains why maintenance or motion is blocked.</dd>
         <dt>Active issues</dt>
-        <dd>Liste synthétique des messages d’erreur ou de blocage (PLC, Return, Dispense) lorsqu’ils sont présents ; sinon message indiquant qu’il n’y a pas de problème actif.</dd>
+        <dd>Short list of error or block messages (PLC, Return, Dispense) when present; otherwise a message that there is no active issue.</dd>
       </dl>
     </section>
   </main>
-  <footer class="doc-footer"><a href="index.html">← Sommaire</a></footer>
+  <footer class="doc-footer"><a href="index.html">← Contents</a></footer>
 </body>
 </html>

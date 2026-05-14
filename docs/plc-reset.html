@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,11 +8,11 @@
 </head>
 <body>
   <header class="doc-header">
-    <h1>Onglet PLC Reset</h1>
-    <p>Publication sur le sujet MQTT <code>hmi/plcreset</code> (commande de reset PLC).</p>
+    <h1>PLC Reset tab</h1>
+    <p>Publishes to MQTT topic <code>hmi/plcreset</code> (PLC reset command).</p>
   </header>
-  <nav class="doc-nav" aria-label="Navigation documentation">
-    <a href="index.html">Accueil</a>
+  <nav class="doc-nav" aria-label="Documentation navigation">
+    <a href="index.html">Home</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="plc-reset.html" aria-current="page">PLC Reset</a>
     <a href="doors.html">Doors</a>
@@ -25,43 +25,43 @@
     <a href="mqtt-monitor.html">MQTT Monitor</a>
   </nav>
   <main>
-    <p class="note">Les actions de cet onglet modifient l’état de la machine. Ne les utilisez que si vous savez ce que vous faites ou sur consigne du support Kadeya.</p>
+    <p class="note">Actions on this tab change machine state. Use them only if you know what you are doing or under Kadeya support instruction.</p>
     <section>
-      <h2>Cases à cocher (Reset Flags)</h2>
-      <p>Elles ne font rien seules : elles définissent le contenu de la commande qui sera envoyée avec le bouton <strong>SEND RESET</strong>.</p>
+      <h2>Checkboxes (Reset Flags)</h2>
+      <p>They do nothing by themselves: they define the payload that will be sent with the <strong>SEND RESET</strong> button.</p>
       <dl class="button-list">
         <dt>Global Machine</dt>
-        <dd>Inclut le drapeau « machine globale » dans la charge utile de reset.</dd>
+        <dd>Includes the global machine flag in the reset payload.</dd>
         <dt>Return Module</dt>
-        <dd>Cible le module retour dans la commande.</dd>
+        <dd>Targets the return module in the command.</dd>
         <dt>Dispense Module</dt>
-        <dd>Cible le module distribution.</dd>
+        <dd>Targets the dispense module.</dd>
         <dt>Declare Empty Machine</dt>
-        <dd>Déclare la machine vide (selon protocole PLC).</dd>
+        <dd>Declares the machine empty (per PLC protocol).</dd>
         <dt>Torque Max Motor</dt>
-        <dd>Cochée par défaut dans l’UI ; inclut le drapeau couple moteur max.</dd>
+        <dd>Checked by default in the UI; includes the max motor torque flag.</dd>
         <dt>Safety Ack</dt>
-        <dd>Accusé / acquittement lié à la sécurité.</dd>
+        <dd>Safety-related acknowledgment.</dd>
         <dt>Electrical Measures</dt>
-        <dd>Mesures électriques (drapeau correspondant).</dd>
+        <dd>Electrical measures (corresponding flag).</dd>
         <dt>Safety Restart</dt>
-        <dd>Redémarrage sécurité.</dd>
+        <dd>Safety restart.</dd>
         <dt>PLC Restart</dt>
-        <dd>Redémarrage PLC.</dd>
+        <dd>PLC restart.</dd>
         <dt>PC Reboot</dt>
-        <dd>Redémarrage du PC embarqué (impact majeur sur la machine).</dd>
+        <dd>Reboots the onboard PC (major impact on the machine).</dd>
         <dt>PC Stop</dt>
-        <dd>Arrêt du PC embarqué (impact majeur).</dd>
+        <dd>Stops the onboard PC (major impact).</dd>
       </dl>
     </section>
     <section>
-      <h2>Bouton d’envoi</h2>
+      <h2>Send button</h2>
       <dl class="button-list">
         <dt>SEND RESET</dt>
-        <dd>Ouvre une boîte de confirmation. Si vous validez, construit le JSON à partir des cases cochées, publie sur <code>hmi/plcreset</code>, et affiche le résultat (succès ou erreur de publication) sous le bouton et dans la barre d’état.</dd>
+        <dd>Opens a confirmation dialog. If you confirm, builds JSON from the checked boxes, publishes to <code>hmi/plcreset</code>, and shows the result (success or publish error) under the button and in the status bar.</dd>
       </dl>
     </section>
   </main>
-  <footer class="doc-footer"><a href="index.html">← Sommaire</a></footer>
+  <footer class="doc-footer"><a href="index.html">← Contents</a></footer>
 </body>
 </html>

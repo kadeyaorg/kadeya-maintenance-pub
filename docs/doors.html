@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,11 +8,11 @@
 </head>
 <body>
   <header class="doc-header">
-    <h1>Onglet Doors</h1>
-    <p>Commande d’ouverture / fermeture des portes via MQTT.</p>
+    <h1>Doors tab</h1>
+    <p>Door open / close commands over MQTT.</p>
   </header>
-  <nav class="doc-nav" aria-label="Navigation documentation">
-    <a href="index.html">Accueil</a>
+  <nav class="doc-nav" aria-label="Documentation navigation">
+    <a href="index.html">Home</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="plc-reset.html">PLC Reset</a>
     <a href="doors.html" aria-current="page">Doors</a>
@@ -29,22 +29,22 @@
       <h2>Return Door</h2>
       <dl class="button-list">
         <dt>Open door</dt>
-        <dd>Publie <code>{"open":true}</code> sur <code>hmi/return/door</code> pour demander l’ouverture.</dd>
+        <dd>Publishes <code>{"open":true}</code> to <code>hmi/return/door</code> to request opening.</dd>
         <dt>Close door</dt>
-        <dd>Publie <code>{"open":false}</code> sur <code>hmi/return/door</code> pour demander la fermeture.</dd>
+        <dd>Publishes <code>{"open":false}</code> to <code>hmi/return/door</code> to request closing.</dd>
       </dl>
     </section>
     <section>
       <h2>Dispense Door</h2>
       <dl class="button-list">
         <dt>Open door</dt>
-        <dd>Publie <code>{"open":true}</code> sur <code>hmi/dispense/door</code>.</dd>
+        <dd>Publishes <code>{"open":true}</code> to <code>hmi/dispense/door</code>.</dd>
         <dt>Close door</dt>
-        <dd>Publie <code>{"open":false}</code> sur <code>hmi/dispense/door</code>.</dd>
+        <dd>Publishes <code>{"open":false}</code> to <code>hmi/dispense/door</code>.</dd>
       </dl>
     </section>
-    <p class="note">Respectez les consignes de sécurité sur site : ne commandez les portes qu’avec une zone dégagée et une procédure validée.</p>
+    <p class="note">Follow on-site safety rules: command doors only with a clear area and an approved procedure.</p>
   </main>
-  <footer class="doc-footer"><a href="index.html">← Sommaire</a></footer>
+  <footer class="doc-footer"><a href="index.html">← Contents</a></footer>
 </body>
 </html>

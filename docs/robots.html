@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,11 +8,11 @@
 </head>
 <body>
   <header class="doc-header">
-    <h1>Onglet Robots</h1>
-    <p>Contrôle des bras <strong>Return</strong> et <strong>Dispense</strong> (préfixes MQTT <code>robot_return</code> et <code>robot_dispense</code>).</p>
+    <h1>Robots tab</h1>
+    <p>Control of <strong>Return</strong> and <strong>Dispense</strong> arms (MQTT prefixes <code>robot_return</code> and <code>robot_dispense</code>).</p>
   </header>
-  <nav class="doc-nav" aria-label="Navigation documentation">
-    <a href="index.html">Accueil</a>
+  <nav class="doc-nav" aria-label="Documentation navigation">
+    <a href="index.html">Home</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="plc-reset.html">PLC Reset</a>
     <a href="doors.html">Doors</a>
@@ -25,40 +25,40 @@
     <a href="mqtt-monitor.html">MQTT Monitor</a>
   </nav>
   <main>
-    <p class="note">Les boutons marqués ⚠ demandent une confirmation avant envoi. « Home ▾ » ouvre une boîte de dialogue pour choisir l’articulation.</p>
+    <p class="note">Buttons marked ⚠ require confirmation before send. “Home ▾” opens a dialog to pick the joint.</p>
     <section>
-      <h2>Actions communes (chaque robot : Return / Dispense)</h2>
+      <h2>Common actions (each robot: Return / Dispense)</h2>
       <dl class="button-list">
         <dt>Init</dt>
-        <dd>Envoie la commande d’initialisation du contrôleur du bras (sans boîte de confirmation supplémentaire).</dd>
+        <dd>Sends the arm controller init command (no extra confirmation).</dd>
         <dt>Unlock</dt>
-        <dd>Déverrouille le bras.</dd>
+        <dd>Unlocks the arm.</dd>
         <dt>Pause</dt>
-        <dd>Met le mouvement en pause.</dd>
+        <dd>Pauses motion.</dd>
         <dt>Resume</dt>
-        <dd>Reprend après une pause.</dd>
+        <dd>Resumes after a pause.</dd>
         <dt>Home ▾</dt>
-        <dd>Ouvre la fenêtre « Select Joint » : liste Joint 1 à Joint 4. <strong>OK</strong> envoie la commande de home pour l’articulation choisie ; <strong>Cancel</strong> annule.</dd>
+        <dd>Opens “Select Joint”: Joint 1 through Joint 4. <strong>OK</strong> sends the home command for the selected joint; <strong>Cancel</strong> aborts.</dd>
         <dt>Stop ⚠</dt>
-        <dd>Arrêt ; confirmation requise puis publication.</dd>
+        <dd>Stop; confirmation required, then publish.</dd>
         <dt>Reset Error ⚠</dt>
-        <dd>Réinitialisation d’erreur ; confirmation requise.</dd>
+        <dd>Error reset; confirmation required.</dd>
         <dt>Brake ON ⚠</dt>
-        <dd>Freins activés ; confirmation requise.</dd>
+        <dd>Brakes engaged; confirmation required.</dd>
         <dt>Brake OFF ⚠</dt>
-        <dd>Freins relâchés ; confirmation requise (risque mécanique).</dd>
+        <dd>Brakes released; confirmation required (mechanical risk).</dd>
       </dl>
     </section>
     <section>
-      <h2>Séquenceur</h2>
+      <h2>Sequencer</h2>
       <dl class="button-list">
         <dt>Reset sequencer (Return Robot)</dt>
-        <dd>Publie la commande de reset d’erreur sur <code>robot_return_sequencer/reset_error</code>.</dd>
+        <dd>Publishes the sequencer error reset command to <code>robot_return_sequencer/reset_error</code>.</dd>
         <dt>Reset sequencer (Dispense Robot)</dt>
-        <dd>Publie sur <code>robot_dispense_sequencer/reset_error</code>.</dd>
+        <dd>Publishes to <code>robot_dispense_sequencer/reset_error</code>.</dd>
       </dl>
     </section>
   </main>
-  <footer class="doc-footer"><a href="index.html">← Sommaire</a></footer>
+  <footer class="doc-footer"><a href="index.html">← Contents</a></footer>
 </body>
 </html>

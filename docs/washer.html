@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,11 +8,11 @@
 </head>
 <body>
   <header class="doc-header">
-    <h1>Onglet Washer</h1>
-    <p>Lave-bouteilles : commande de démarrage et lecture d’état MQTT.</p>
+    <h1>Washer tab</h1>
+    <p>Bottle washer: start command and MQTT state display.</p>
   </header>
-  <nav class="doc-nav" aria-label="Navigation documentation">
-    <a href="index.html">Accueil</a>
+  <nav class="doc-nav" aria-label="Documentation navigation">
+    <a href="index.html">Home</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="plc-reset.html">PLC Reset</a>
     <a href="doors.html">Doors</a>
@@ -26,24 +26,24 @@
   </nav>
   <main>
     <section>
-      <h2>Bouton</h2>
+      <h2>Button</h2>
       <dl class="button-list">
         <dt>Washer Relay</dt>
-        <dd>Publie sur <code>dishwasher/start</code> un JSON du type <code>{"program":1}</code> pour lancer le programme indiqué. Le libellé de retour (succès / erreur) s’affiche sous le bouton et dans la barre d’état.</dd>
+        <dd>Publishes to <code>dishwasher/start</code> JSON such as <code>{"program":1}</code> to start the selected program. Result text (success / error) appears under the button and in the status bar.</dd>
       </dl>
     </section>
     <section>
-      <h2>Champs d’information (pas des boutons)</h2>
+      <h2>Information fields (not buttons)</h2>
       <dl class="button-list">
         <dt>Status</dt>
-        <dd>État du lave-bouteilles (sujet d’état agrégé côté application).</dd>
+        <dd>Bottle washer state (aggregated status topic in the app).</dd>
         <dt>Level</dt>
-        <dd>Niveau remonté par MQTT (<code>dishwasher/level</code> dans la pile de données).</dd>
+        <dd>Level from MQTT (<code>dishwasher/level</code> in the data pipeline).</dd>
         <dt>Error</dt>
-        <dd>Code ou message d’erreur courant (<code>dishwasher/error</code>).</dd>
+        <dd>Current error code or message (<code>dishwasher/error</code>).</dd>
       </dl>
     </section>
   </main>
-  <footer class="doc-footer"><a href="index.html">← Sommaire</a></footer>
+  <footer class="doc-footer"><a href="index.html">← Contents</a></footer>
 </body>
 </html>
