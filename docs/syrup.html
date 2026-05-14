@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Syrup — Go Maintenance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="doc-header">
+    <h1>Onglet Syrup</h1>
+    <p>Gestion des niveaux BIB (F1 à F4) — commandes sur <code>hmi/syrup/command</code>.</p>
+  </header>
+  <nav class="doc-nav" aria-label="Navigation documentation">
+    <a href="index.html">Accueil</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="plc-reset.html">PLC Reset</a>
+    <a href="doors.html">Doors</a>
+    <a href="robots.html">Robots</a>
+    <a href="valves.html">Valves</a>
+    <a href="dispense.html">Dispense</a>
+    <a href="washer.html">Washer</a>
+    <a href="syrup.html" aria-current="page">Syrup</a>
+    <a href="software.html">Software</a>
+    <a href="mqtt-monitor.html">MQTT Monitor</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Lignes F1 à F4</h2>
+      <p>Chaque ligne affiche une barre de progression (pourcentage restant), le texte « restant / capacité » en mL, et une alerte visuelle si le niveau est très bas.</p>
+      <dl class="button-list">
+        <dt>Adjust</dt>
+        <dd>Ouvre la fenêtre « Adjust Syrup Level » : saisie du <strong>remaining (mL)</strong> et de la <strong>capacity (mL)</strong>. <strong>OK</strong> valide (contrôles : restant entre 0 et capacité ; capacité entre 1000 et 20000 mL) et envoie la commande d’ajustement pour la ligne (F1–F4). <strong>Cancel</strong> ferme sans envoyer.</dd>
+        <dt>Replace BIB</dt>
+        <dd>Demande une confirmation puis envoie une commande qui réinitialise le BIB de la ligne à pleine capacité (capacité lue depuis l’état courant, ou valeur par défaut 9500 mL si la capacité reçue est 0).</dd>
+      </dl>
+    </section>
+    <p class="note">Les pourcentages et mL reflètent les données reçues par MQTT ; après une commande, l’affichage se met à jour quand la machine publie le nouvel état.</p>
+  </main>
+  <footer class="doc-footer"><a href="index.html">← Sommaire</a></footer>
+</body>
+</html>

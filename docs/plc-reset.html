@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PLC Reset — Go Maintenance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="doc-header">
+    <h1>Onglet PLC Reset</h1>
+    <p>Publication sur le sujet MQTT <code>hmi/plcreset</code> (commande de reset PLC).</p>
+  </header>
+  <nav class="doc-nav" aria-label="Navigation documentation">
+    <a href="index.html">Accueil</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="plc-reset.html" aria-current="page">PLC Reset</a>
+    <a href="doors.html">Doors</a>
+    <a href="robots.html">Robots</a>
+    <a href="valves.html">Valves</a>
+    <a href="dispense.html">Dispense</a>
+    <a href="washer.html">Washer</a>
+    <a href="syrup.html">Syrup</a>
+    <a href="software.html">Software</a>
+    <a href="mqtt-monitor.html">MQTT Monitor</a>
+  </nav>
+  <main>
+    <p class="note">Les actions de cet onglet modifient l’état de la machine. Ne les utilisez que si vous savez ce que vous faites ou sur consigne du support Kadeya.</p>
+    <section>
+      <h2>Cases à cocher (Reset Flags)</h2>
+      <p>Elles ne font rien seules : elles définissent le contenu de la commande qui sera envoyée avec le bouton <strong>SEND RESET</strong>.</p>
+      <dl class="button-list">
+        <dt>Global Machine</dt>
+        <dd>Inclut le drapeau « machine globale » dans la charge utile de reset.</dd>
+        <dt>Return Module</dt>
+        <dd>Cible le module retour dans la commande.</dd>
+        <dt>Dispense Module</dt>
+        <dd>Cible le module distribution.</dd>
+        <dt>Declare Empty Machine</dt>
+        <dd>Déclare la machine vide (selon protocole PLC).</dd>
+        <dt>Torque Max Motor</dt>
+        <dd>Cochée par défaut dans l’UI ; inclut le drapeau couple moteur max.</dd>
+        <dt>Safety Ack</dt>
+        <dd>Accusé / acquittement lié à la sécurité.</dd>
+        <dt>Electrical Measures</dt>
+        <dd>Mesures électriques (drapeau correspondant).</dd>
+        <dt>Safety Restart</dt>
+        <dd>Redémarrage sécurité.</dd>
+        <dt>PLC Restart</dt>
+        <dd>Redémarrage PLC.</dd>
+        <dt>PC Reboot</dt>
+        <dd>Redémarrage du PC embarqué (impact majeur sur la machine).</dd>
+        <dt>PC Stop</dt>
+        <dd>Arrêt du PC embarqué (impact majeur).</dd>
+      </dl>
+    </section>
+    <section>
+      <h2>Bouton d’envoi</h2>
+      <dl class="button-list">
+        <dt>SEND RESET</dt>
+        <dd>Ouvre une boîte de confirmation. Si vous validez, construit le JSON à partir des cases cochées, publie sur <code>hmi/plcreset</code>, et affiche le résultat (succès ou erreur de publication) sous le bouton et dans la barre d’état.</dd>
+      </dl>
+    </section>
+  </main>
+  <footer class="doc-footer"><a href="index.html">← Sommaire</a></footer>
+</body>
+</html>

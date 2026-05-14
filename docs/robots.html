@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robots — Go Maintenance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="doc-header">
+    <h1>Onglet Robots</h1>
+    <p>Contrôle des bras <strong>Return</strong> et <strong>Dispense</strong> (préfixes MQTT <code>robot_return</code> et <code>robot_dispense</code>).</p>
+  </header>
+  <nav class="doc-nav" aria-label="Navigation documentation">
+    <a href="index.html">Accueil</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="plc-reset.html">PLC Reset</a>
+    <a href="doors.html">Doors</a>
+    <a href="robots.html" aria-current="page">Robots</a>
+    <a href="valves.html">Valves</a>
+    <a href="dispense.html">Dispense</a>
+    <a href="washer.html">Washer</a>
+    <a href="syrup.html">Syrup</a>
+    <a href="software.html">Software</a>
+    <a href="mqtt-monitor.html">MQTT Monitor</a>
+  </nav>
+  <main>
+    <p class="note">Les boutons marqués ⚠ demandent une confirmation avant envoi. « Home ▾ » ouvre une boîte de dialogue pour choisir l’articulation.</p>
+    <section>
+      <h2>Actions communes (chaque robot : Return / Dispense)</h2>
+      <dl class="button-list">
+        <dt>Init</dt>
+        <dd>Envoie la commande d’initialisation du contrôleur du bras (sans boîte de confirmation supplémentaire).</dd>
+        <dt>Unlock</dt>
+        <dd>Déverrouille le bras.</dd>
+        <dt>Pause</dt>
+        <dd>Met le mouvement en pause.</dd>
+        <dt>Resume</dt>
+        <dd>Reprend après une pause.</dd>
+        <dt>Home ▾</dt>
+        <dd>Ouvre la fenêtre « Select Joint » : liste Joint 1 à Joint 4. <strong>OK</strong> envoie la commande de home pour l’articulation choisie ; <strong>Cancel</strong> annule.</dd>
+        <dt>Stop ⚠</dt>
+        <dd>Arrêt ; confirmation requise puis publication.</dd>
+        <dt>Reset Error ⚠</dt>
+        <dd>Réinitialisation d’erreur ; confirmation requise.</dd>
+        <dt>Brake ON ⚠</dt>
+        <dd>Freins activés ; confirmation requise.</dd>
+        <dt>Brake OFF ⚠</dt>
+        <dd>Freins relâchés ; confirmation requise (risque mécanique).</dd>
+      </dl>
+    </section>
+    <section>
+      <h2>Séquenceur</h2>
+      <dl class="button-list">
+        <dt>Reset sequencer (Return Robot)</dt>
+        <dd>Publie la commande de reset d’erreur sur <code>robot_return_sequencer/reset_error</code>.</dd>
+        <dt>Reset sequencer (Dispense Robot)</dt>
+        <dd>Publie sur <code>robot_dispense_sequencer/reset_error</code>.</dd>
+      </dl>
+    </section>
+  </main>
+  <footer class="doc-footer"><a href="index.html">← Sommaire</a></footer>
+</body>
+</html>

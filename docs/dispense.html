@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dispense — Go Maintenance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="doc-header">
+    <h1>Onglet Dispense</h1>
+    <p>Recettes de test : envoi sur <code>hmi/dispense/request</code>.</p>
+  </header>
+  <nav class="doc-nav" aria-label="Navigation documentation">
+    <a href="index.html">Accueil</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="plc-reset.html">PLC Reset</a>
+    <a href="doors.html">Doors</a>
+    <a href="robots.html">Robots</a>
+    <a href="valves.html">Valves</a>
+    <a href="dispense.html" aria-current="page">Dispense</a>
+    <a href="washer.html">Washer</a>
+    <a href="syrup.html">Syrup</a>
+    <a href="software.html">Software</a>
+    <a href="mqtt-monitor.html">MQTT Monitor</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Groupe « Test Recipes »</h2>
+      <p>Chaque bouton correspond à une recette prédéfinie (débits FW/CW/F1–F4 et nombre de pulsations). Un clic sérialise la recette en JSON et la publie sur <code>hmi/dispense/request</code>.</p>
+      <dl class="button-list">
+        <dt>Water</dt>
+        <dd>Recette eau (paramètres internes fixes dans l’application).</dd>
+        <dt>Carb Water</dt>
+        <dd>Recette eau gazeifiée.</dd>
+        <dt>Syrup 1</dt>
+        <dd>Recette sirop voie 1.</dd>
+        <dt>Syrup 2</dt>
+        <dd>Recette sirop voie 2.</dd>
+        <dt>Syrup 3</dt>
+        <dd>Recette sirop voie 3.</dd>
+        <dt>Syrup 4</dt>
+        <dd>Recette sirop voie 4.</dd>
+      </dl>
+    </section>
+    <p class="note">À utiliser uniquement dans un contexte de test ou maintenance autorisé : la machine peut réellement distribuer du produit.</p>
+  </main>
+  <footer class="doc-footer"><a href="index.html">← Sommaire</a></footer>
+</body>
+</html>

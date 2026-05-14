@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MQTT Monitor — Go Maintenance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="doc-header">
+    <h1>Onglet MQTT Monitor</h1>
+    <p>Journal en temps quasi réel des messages MQTT auxquels l’interface est abonnée (lecture / filtrage).</p>
+  </header>
+  <nav class="doc-nav" aria-label="Navigation documentation">
+    <a href="index.html">Accueil</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="plc-reset.html">PLC Reset</a>
+    <a href="doors.html">Doors</a>
+    <a href="robots.html">Robots</a>
+    <a href="valves.html">Valves</a>
+    <a href="dispense.html">Dispense</a>
+    <a href="washer.html">Washer</a>
+    <a href="syrup.html">Syrup</a>
+    <a href="software.html">Software</a>
+    <a href="mqtt-monitor.html" aria-current="page">MQTT Monitor</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Champs de filtre</h2>
+      <dl class="button-list">
+        <dt>Topic</dt>
+        <dd>Filtre les lignes affichées : seuls les messages dont le sujet contient le texte saisi (sans tenir compte de la casse) restent visibles. Laisser vide pour tout afficher.</dd>
+        <dt>Search</dt>
+        <dd>Filtre sur une chaîne libre (horodatage, sujet ou charge utile), insensible à la casse.</dd>
+      </dl>
+    </section>
+    <section>
+      <h2>Contrôles</h2>
+      <dl class="button-list">
+        <dt>Pause (case à cocher)</dt>
+        <dd>Lorsqu’elle est cochée, l’affichage ne se met plus à jour avec les nouveaux messages (le tampon continue de recevoir en arrière-plan jusqu’à la limite interne, au-delà de laquelle des messages peuvent être ignorés si le canal est saturé).</dd>
+        <dt>Clear</dt>
+        <dd>Vide le tampon et le journal affiché ; remet le compteur de messages à zéro.</dd>
+      </dl>
+    </section>
+    <section>
+      <h2>Zone de texte</h2>
+      <p>Chaque ligne correspond à un message : horodatage, sujet (mise en forme visuelle particulière dans l’UI Windows) et charge utile JSON compactée sur une ligne lorsque c’est du JSON valide.</p>
+      <p>Le compteur à droite indique le nombre de messages conservés dans le tampon (plafonné, les plus anciens sont retirés quand la limite est dépassée).</p>
+    </section>
+  </main>
+  <footer class="doc-footer"><a href="index.html">← Sommaire</a></footer>
+</body>
+</html>

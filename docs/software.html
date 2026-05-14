@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Software — Go Maintenance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="doc-header">
+    <h1>Onglet Software</h1>
+    <p>Mises à jour logicielles, redémarrage global et supervision des processus (agent logiciel).</p>
+  </header>
+  <nav class="doc-nav" aria-label="Navigation documentation">
+    <a href="index.html">Accueil</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="plc-reset.html">PLC Reset</a>
+    <a href="doors.html">Doors</a>
+    <a href="robots.html">Robots</a>
+    <a href="valves.html">Valves</a>
+    <a href="dispense.html">Dispense</a>
+    <a href="washer.html">Washer</a>
+    <a href="syrup.html">Syrup</a>
+    <a href="software.html" aria-current="page">Software</a>
+    <a href="mqtt-monitor.html">MQTT Monitor</a>
+  </nav>
+  <main>
+    <p class="note">L’interface rappelle que les mises à jour manuelles et le redémarrage affectent <strong>tous</strong> les processus logiciels de la machine : n’utiliser que sur instruction du support Kadeya.</p>
+    <section>
+      <h2>Updates</h2>
+      <dl class="button-list">
+        <dt>Run manual update</dt>
+        <dd>Ouvre une confirmation (mise à jour immédiate, possibles redémarrages de services). Si vous validez, publie <code>{"update":true}</code> sur <code>software_agent/update</code> ; le résultat s’affiche sous le bouton.</dd>
+      </dl>
+    </section>
+    <section>
+      <h2>Restart</h2>
+      <dl class="button-list">
+        <dt>Restart all software</dt>
+        <dd>Confirmation obligatoire (délai possible 30–60 s). Publie <code>{"restart":true}</code> sur <code>software_agent/restart_all</code>.</dd>
+      </dl>
+    </section>
+    <section>
+      <h2>Zones sans bouton d’action</h2>
+      <dl class="button-list">
+        <dt>Software agent</dt>
+        <dd>Libellés d’état de l’agent (état, raison, run id, horodatage, détails) alimentés par les messages <code>software_agent/status</code> (et champs associés).</dd>
+        <dt>Processes (tableau)</dt>
+        <dd>Liste les instances à partir de <code>software_agent/software_status</code> : nom manifeste, statut, PID, identifiant logiciel, ligne de commande. La coloration de la colonne Status met en évidence running / stopped / autre.</dd>
+      </dl>
+    </section>
+  </main>
+  <footer class="doc-footer"><a href="index.html">← Sommaire</a></footer>
+</body>
+</html>
