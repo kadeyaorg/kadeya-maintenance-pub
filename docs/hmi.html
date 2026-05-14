@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HMI — Go Maintenance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="doc-header">
+    <h1>HMI tab</h1>
+    <p>Maintenance access and recovery from stuck dispense/return HMI flows.</p>
+  </header>
+  <nav class="doc-nav" aria-label="Documentation navigation">
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="plc-reset.html">PLC Reset</a>
+    <a href="doors.html">Doors</a>
+    <a href="robots.html">Robots</a>
+    <a href="valves.html">Valves</a>
+    <a href="dispense.html">Dispense</a>
+    <a href="washer.html">Washer</a>
+    <a href="syrup.html">Syrup</a>
+    <a href="software.html">Software</a>
+    <a href="hmi.html" aria-current="page">HMI</a>
+    <a href="mqtt-monitor.html">MQTT Monitor</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Maintenance</h2>
+      <p>Enter <strong>machineId</strong> and use <strong>Open maintenance page</strong> so the on-machine HMI can open maintenance (same path as a validated operator scan).</p>
+    </section>
+    <section>
+      <h2>Unstick HMI flow</h2>
+      <p>If the HMI stays on dispense-in-progress or return-in-progress, these buttons send two state messages 1.5 seconds apart:</p>
+      <dl class="button-list">
+        <dt>Clear stuck Dispense</dt>
+        <dd><code>dispense/state</code>: first <code>COMPLETED</code>, then <code>READY</code> (with <code>bottleId</code> <code>00001</code>, <code>errorCode</code> 0).</dd>
+        <dt>Clear stuck Return</dt>
+        <dd><code>return/state</code>: first <code>ACCEPTED</code>, then <code>READY</code> (same fields).</dd>
+      </dl>
+    </section>
+  </main>
+  <footer class="doc-footer"><a href="index.html">← Contents</a></footer>
+</body>
+</html>
