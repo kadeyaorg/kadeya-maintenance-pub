@@ -17,6 +17,8 @@
     <a href="plc-reset.html">PLC Reset</a>
     <a href="doors.html">Doors</a>
     <a href="robots.html" aria-current="page">Robots</a>
+    <a href="robot-sequencer.html">Move Sequencer</a>
+    <a href="robot-view.html">Robot View</a>
     <a href="valves.html">Valves</a>
     <a href="dispense.html">Dispense</a>
     <a href="washer.html">Washer</a>
@@ -28,35 +30,53 @@
   <main>
     <p class="note">Buttons marked ⚠ require confirmation before send. “Home ▾” opens a dialog to pick the joint.</p>
     <section>
-      <h2>Common actions (each robot: Return / Dispense)</h2>
+      <h2>Jog</h2>
+      <p>Select the active robot (Dispense or Return), mode (Cartesian or Articular), parameters <code>D</code>, <code>lr</code>, <code>roughtly</code>, then use − / + / Go per axis. Jog publishes <code>{robot}/move</code> with gripper sentinel values when not jogging grip axes.</p>
+    </section>
+    <section>
+      <h2>Live status and pose</h2>
+      <p>Each robot group shows MQTT <code>status</code> and <code>state</code> fields updated while connected.</p>
+    </section>
+    <section>
+      <h2>Extra commands (each robot)</h2>
+      <dl class="button-list">
+        <dt>Clear E-Stop ⚠</dt>
+        <dd><code>clear_emergency_stop</code></dd>
+        <dt>Drag ON / OFF</dt>
+        <dd><code>set_drag_teach</code></dd>
+        <dt>Gripper Init</dt>
+        <dd><code>gripper_init</code></dd>
+        <dt>Ping</dt>
+        <dd><code>ping</code></dd>
+      </dl>
+    </section>
+    <section>
+      <h2>Standard commands (each robot)</h2>
       <dl class="button-list">
         <dt>Init</dt>
         <dd>Sends the arm controller init command (no extra confirmation).</dd>
         <dt>Unlock</dt>
         <dd>Unlocks the arm.</dd>
-        <dt>Pause</dt>
-        <dd>Pauses motion.</dd>
-        <dt>Resume</dt>
-        <dd>Resumes after a pause.</dd>
+        <dt>Pause / Resume</dt>
+        <dd>Pause or resume motion.</dd>
         <dt>Home ▾</dt>
-        <dd>Opens “Select Joint”: Joint 1 through Joint 4. <strong>OK</strong> sends the home command for the selected joint; <strong>Cancel</strong> aborts.</dd>
-        <dt>Stop ⚠</dt>
-        <dd>Stop; confirmation required, then publish.</dd>
-        <dt>Reset Error ⚠</dt>
-        <dd>Error reset; confirmation required.</dd>
-        <dt>Brake ON ⚠</dt>
-        <dd>Brakes engaged; confirmation required.</dd>
-        <dt>Brake OFF ⚠</dt>
-        <dd>Brakes released; confirmation required (mechanical risk).</dd>
+        <dd>Joint 1–4 home via dialog.</dd>
+        <dt>Stop ⚠ / Reset Error ⚠ / Brake ON ⚠ / Brake OFF ⚠</dt>
+        <dd>As labeled; confirmation required.</dd>
+      </dl>
+    </section>
+    <section>
+      <h2>Gripper (active jog robot)</h2>
+      <dl class="button-list">
+        <dt>Set angle / Set position</dt>
+        <dd><code>gripper_set_angle</code> / <code>gripper_set_position</code></dd>
       </dl>
     </section>
     <section>
       <h2>Sequencer</h2>
       <dl class="button-list">
-        <dt>Reset sequencer (Return Robot)</dt>
-        <dd>Publishes the sequencer error reset command to <code>robot_return_sequencer/reset_error</code>.</dd>
-        <dt>Reset sequencer (Dispense Robot)</dt>
-        <dd>Publishes to <code>robot_dispense_sequencer/reset_error</code>.</dd>
+        <dt>Reset sequencer</dt>
+        <dd><code>robot_*_sequencer/reset_error</code> (production sequencer, not move sequences).</dd>
       </dl>
     </section>
   </main>

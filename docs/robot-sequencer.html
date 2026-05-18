@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Move Sequencer — Go Maintenance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="doc-header">
+    <h1>Move Sequencer tab</h1>
+    <p>Build and play back <code>robot_dispense/move</code> sequences for maintenance testing.</p>
+  </header>
+  <nav class="doc-nav" aria-label="Documentation navigation">
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="plc-reset.html">PLC Reset</a>
+    <a href="doors.html">Doors</a>
+    <a href="robots.html">Robots</a>
+    <a href="robot-sequencer.html" aria-current="page">Move Sequencer</a>
+    <a href="robot-view.html">Robot View</a>
+    <a href="valves.html">Valves</a>
+    <a href="dispense.html">Dispense</a>
+    <a href="washer.html">Washer</a>
+    <a href="syrup.html">Syrup</a>
+    <a href="software.html">Software</a>
+    <a href="hmi.html">HMI</a>
+    <a href="mqtt-monitor.html">MQTT Monitor</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Sequence storage</h2>
+      <p>Named sequences are saved to <code>%APPDATA%\Kadeya\robot_sequences.json</code> (Save / Load / Delete).</p>
+    </section>
+    <section>
+      <h2>Playback</h2>
+      <dl class="button-list">
+        <dt>NEXT</dt>
+        <dd>Sends the current move to <code>robot_dispense/move</code> and advances the index.</dd>
+        <dt>PLAY</dt>
+        <dd>Runs the list automatically; waits until <code>moving</code> is false (2 min timeout per step).</dd>
+        <dt>Stop robot</dt>
+        <dd>Publishes <code>robot_dispense/stop</code> and stops auto-play.</dd>
+      </dl>
+    </section>
+    <section>
+      <h2>Copy position</h2>
+      <p>Fills the move form from the latest <code>robot_dispense/state</code> (articular mapping: Z, A1, A2, R, gripper).</p>
+    </section>
+  </main>
+  <footer class="doc-footer"><a href="index.html">← Contents</a></footer>
+</body>
+</html>

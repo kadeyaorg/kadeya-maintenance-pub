@@ -17,6 +17,8 @@
     <a href="plc-reset.html" aria-current="page">PLC Reset</a>
     <a href="doors.html">Doors</a>
     <a href="robots.html">Robots</a>
+    <a href="robot-sequencer.html">Move Sequencer</a>
+    <a href="robot-view.html">Robot View</a>
     <a href="valves.html">Valves</a>
     <a href="dispense.html">Dispense</a>
     <a href="washer.html">Washer</a>
@@ -33,10 +35,10 @@
       <dl class="button-list">
         <dt>Global Machine</dt>
         <dd>Includes the global machine flag in the reset payload.</dd>
-        <dt>Return Module</dt>
-        <dd>Targets the return module in the command.</dd>
-        <dt>Dispense Module</dt>
-        <dd>Targets the dispense module.</dd>
+        <dt>Return Machine</dt>
+        <dd>Sets <code>returnmachine</code> in the command.</dd>
+        <dt>Dispense Machine</dt>
+        <dd>Sets <code>dispensemachine</code> in the command.</dd>
         <dt>Declare Empty Machine</dt>
         <dd>Declares the machine empty (per PLC protocol).</dd>
         <dt>Torque Max Motor</dt>
