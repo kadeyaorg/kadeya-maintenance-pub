@@ -9,7 +9,7 @@
 <body>
   <header class="doc-header">
     <h1>HMI tab</h1>
-    <p>Maintenance access and recovery from stuck dispense/return HMI flows.</p>
+    <p>Maintenance access, HMI fullscreen control, and recovery from stuck dispense/return flows.</p>
   </header>
   <nav class="doc-nav" aria-label="Documentation navigation">
     <a href="index.html">Home</a>
@@ -31,6 +31,16 @@
     <section>
       <h2>Maintenance</h2>
       <p>Enter <strong>machineId</strong> and use <strong>Open maintenance page</strong> so the on-machine HMI can open maintenance (same path as a validated operator scan).</p>
+    </section>
+    <section>
+      <h2>Fullscreen</h2>
+      <p>Reflects and controls HMI window mode via <code>hmi/fullscreen</code>.</p>
+      <dl class="button-list">
+        <dt>Status</dt>
+        <dd>Shows the last <code>hmi/fullscreen</code> value (<code>fullscreen</code> or <code>windowed</code>), or a switching message while waiting.</dd>
+        <dt>Enter fullscreen / Exit fullscreen</dt>
+        <dd>Publishes <code>{"fullscreen":true}</code> or <code>false</code> on <code>hmi/fullscreen</code>. The button stays disabled until the broker reports the matching state.</dd>
+      </dl>
     </section>
     <section>
       <h2>Unstick HMI flow</h2>
