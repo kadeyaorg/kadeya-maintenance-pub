@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dispense Shelves — Go Maintenance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="doc-header">
+    <h1>Dispense Shelves tab</h1>
+    <p>Live graphical view of bottle slots on shelves F1–F4 (read-only).</p>
+  </header>
+  <nav class="doc-nav" aria-label="Documentation navigation">
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="plc-reset.html">PLC Reset</a>
+    <a href="doors.html">Doors</a>
+    <a href="robots.html">Robots</a>
+    <a href="robot-sequencer.html">Move Sequencer</a>
+    <a href="robot-view.html">Robot View</a>
+    <a href="valves.html">Valves</a>
+    <a href="dispense.html">Dispense</a>
+    <a href="dispense-shelves.html" aria-current="page">Dispense Shelves</a>
+    <a href="washer.html">Washer</a>
+    <a href="syrup.html">Syrup</a>
+    <a href="software.html">Software</a>
+    <a href="hmi.html">HMI</a>
+    <a href="mqtt-monitor.html">MQTT Monitor</a>
+  </nav>
+  <main>
+    <section>
+      <h2>Tab purpose</h2>
+      <p>
+        The <strong>Dispense Shelves</strong> tab shows four shelf layouts (F1–F4) in a 2×2 grid. Each shelf is drawn to match the physical slot arrangement (21 positions). The UI subscribes to MQTT and updates about every 200&nbsp;ms while connected.
+      </p>
+    </section>
+    <section>
+      <h2>MQTT topics</h2>
+      <p>The app subscribes to:</p>
+      <ul>
+        <li><code>plc/dispense/f1</code> … <code>plc/dispense/f4</code></li>
+        <li><code>plc/dispense</code> (optional bundled payload with <code>f1</code>–<code>f4</code> objects)</li>
+      </ul>
+      <p>Topics may include a machine prefix (e.g. <code>kadeya-001/plc/dispense/f1</code>); the suffix is matched automatically.</p>
+    </section>
+    <section>
+      <h2>Payload format</h2>
+      <p>Each message is a JSON object: keys are slot IDs, values are bottle IDs or <code>-1</code> for empty.</p>
+      <dl class="button-list">
+        <dt>F1</dt>
+        <dd>Keys <code>"1"</code> … <code>"21"</code> (local slots 1–21 on the drawing).</dd>
+        <dt>F2</dt>
+        <dd>Keys <code>"22"</code> … <code>"42"</code> (mapped to local slots 1–21).</dd>
+        <dt>F3</dt>
+        <dd>Keys <code>"43"</code> … <code>"63"</code>.</dd>
+        <dt>F4</dt>
+        <dd>Keys <code>"64"</code> … <code>"84"</code>.</dd>
+        <dt><code>-1</code></dt>
+        <dd>Empty slot: only the slot index is shown (muted).</dd>
+        <dt>Positive number</dt>
+        <dd>Occupied slot: five-digit bottle ID (e.g. <code>00125</code>) in the circle; slot index below in orange.</dd>
+      </dl>
+      <p class="note">Numeric values may appear with or without leading zeros in the broker payload; the UI normalizes them for display.</p>
+    </section>
+    <section>
+      <h2>Layout</h2>
+      <p>Each shelf panel (F1–F4) is a canvas: gray plate outline, white circles per slot, black sensor tabs on the appropriate edge. No commands are sent from this tab.</p>
+    </section>
+  </main>
+  <footer class="doc-footer"><a href="index.html">← Contents</a></footer>
+</body>
+</html>
