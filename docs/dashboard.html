@@ -41,8 +41,10 @@
       <dl class="button-list">
         <dt>PLC, Dispense, Return, Washer cards</dt>
         <dd>Colored dot and status label; color reflects keywords in the text (OK / warning / error).</dd>
-        <dt>Metrics (Dirty Bottles, Clean Bottles, Washer Index, Washer Opened, Maintenance Mode, Blocking Reason)</dt>
-        <dd>Values from machine state; “Blocking Reason” often explains why maintenance or motion is blocked.</dd>
+        <dt>Metrics (Dirty Bottles, Clean Bottles, Maintenance Mode, Blocking Reason)</dt>
+        <dd>From <code>plc/machine/state</code> (<code>dirtyindex</code>, <code>cleanindex</code>, <code>maintenance_allowed</code>, <code>blockingReason</code>, etc.).</dd>
+        <dt>Washer Index, Washer Opened, Washer status card</dt>
+        <dd>From <code>plc/washer</code>: <code>Index</code>, <code>HoodIsUp</code> (shown as Washer Opened), <code>State</code> (e.g. Filling). Falls back to <code>plc/machine/state</code> / <code>dishwasher/status</code> if <code>plc/washer</code> has not been received yet.</dd>
         <dt>Active issues</dt>
         <dd>Short list of error or block messages (PLC, Return, Dispense) when present; otherwise a message that there is no active issue.</dd>
       </dl>

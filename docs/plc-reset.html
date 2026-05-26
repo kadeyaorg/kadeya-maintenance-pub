@@ -31,6 +31,21 @@
   <main>
     <p class="note">Actions on this tab change machine state. Use them only if you know what you are doing or under Kadeya support instruction.</p>
     <section>
+      <h2>Maintenance mode</h2>
+      <p>
+        The UI subscribes to <code>hmi/plcreset</code> and reads <code>MaintenanceRequired</code> (<code>true</code> or <code>false</code>).
+        The toggle button publishes only that field:
+      </p>
+      <dl class="button-list">
+        <dt>Status label</dt>
+        <dd>Shows the last <code>MaintenanceRequired</code> value received on <code>hmi/plcreset</code>, or <strong>—</strong> before the first message.</dd>
+        <dt>Enter maintenance mode</dt>
+        <dd>Shown when maintenance is off (or unknown). Publishes <code>{"MaintenanceRequired":true}</code>.</dd>
+        <dt>Exit maintenance mode</dt>
+        <dd>Shown when maintenance is on. Publishes <code>{"MaintenanceRequired":false}</code>.</dd>
+      </dl>
+    </section>
+    <section>
       <h2>Checkboxes (Reset Flags)</h2>
       <p>They do nothing by themselves: they define the payload that will be sent with the <strong>SEND RESET</strong> button.</p>
       <dl class="button-list">
