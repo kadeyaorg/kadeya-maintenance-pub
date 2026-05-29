@@ -33,16 +33,18 @@
     <section>
       <h2>Maintenance mode</h2>
       <p>
-        The UI subscribes to <code>hmi/plcreset</code> and reads <code>MaintenanceRequired</code> (<code>true</code> or <code>false</code>).
-        The toggle button publishes only that field:
+        The button label follows <code>plc/state</code> (<code>IsMaintenanceMode</code>).
+        Clicks publish <code>{"MaintenanceRequired":true}</code> or <code>false</code> on <code>hmi/plcreset</code>.
       </p>
       <dl class="button-list">
-        <dt>Status label</dt>
-        <dd>Shows the last <code>MaintenanceRequired</code> value received on <code>hmi/plcreset</code>, or <strong>—</strong> before the first message.</dd>
+        <dt>PLC maintenance mode / Maintenance allowed</dt>
+        <dd>From <code>plc/state</code>: <code>IsMaintenanceMode</code> drives Enter vs Exit; <code>maintenance_allowed</code> is shown for context.</dd>
+        <dt>Maintenance required (hmi/plcreset)</dt>
+        <dd>Read-only echo of the last <code>MaintenanceRequired</code> on <code>hmi/plcreset</code>.</dd>
         <dt>Enter maintenance mode</dt>
-        <dd>Shown when maintenance is off (or unknown). Publishes <code>{"MaintenanceRequired":true}</code>.</dd>
+        <dd>When <code>maintenance_allowed</code> is <code>true</code>, one confirmation. When <code>false</code> (or <code>plc/state</code> not received yet), two confirmations before publish.</dd>
         <dt>Exit maintenance mode</dt>
-        <dd>Shown when maintenance is on. Publishes <code>{"MaintenanceRequired":false}</code>.</dd>
+        <dd>When <code>IsMaintenanceMode</code> is <code>true</code>. One confirmation, then <code>{"MaintenanceRequired":false}</code>.</dd>
       </dl>
     </section>
     <section>
