@@ -37,10 +37,10 @@
     <section>
       <h2>About the application</h2>
       <p>
-        <strong>kadeya-maintenance</strong> is a Windows console that connects to the machine MQTT broker to show status (dashboard), send maintenance commands (doors, robots, valves, etc.), and inspect MQTT messages received by the UI.
+        <strong>kadeya-maintenance</strong> is a cross-platform console (Windows, macOS, Linux desktop, plus a web build) that connects to the machine MQTT broker to show status (dashboard), send maintenance commands (doors, robots, valves, etc.), and inspect MQTT messages received by the UI.
       </p>
       <p>
-        On startup it may offer an <strong>in-app update</strong> when a newer release exists on the public GitHub repository; you can install or skip (skip only until the next launch).
+        On the desktop app, a newer release is offered as an <strong>in-app update</strong> (signed, installed automatically) when one is available; you can install now or later. The Washer screen can also show <strong>Hobart cloud telemetry</strong> when configured (desktop only).
       </p>
     </section>
     <section>
@@ -70,13 +70,15 @@
       <p>Each entry opens the matching tab. Individual pages describe the controls for each tab:</p>
       <ul>
         <li><a href="dashboard.html">Dashboard</a> — overview and alerts</li>
-        <li><a href="plc-reset.html">PLC Reset</a> — PLC reset flags</li>
+        <li><a href="plc-reset.html">PLC Reset</a> — PLC reset flags and maintenance mode</li>
         <li><a href="doors.html">Doors</a> — door open / close</li>
         <li><a href="robots.html">Robots</a> — Return and Dispense arms</li>
+        <li><a href="robot-sequencer.html">Move Sequencer</a> — build and play robot move sequences (file import/export)</li>
+        <li><a href="robot-view.html">Robot View</a> — live SCARA pose visualization</li>
         <li><a href="valves.html">Valves</a> — solenoids</li>
         <li><a href="dispense.html">Dispense</a> — test recipes</li>
         <li><a href="dispense-shelves.html">Dispense Shelves</a> — live bottle layout (F1–F4)</li>
-        <li><a href="washer.html">Washer</a> — bottle washer</li>
+        <li><a href="washer.html">Washer</a> — bottle washer + Hobart cloud telemetry</li>
         <li><a href="syrup.html">Syrup</a> — BIB levels</li>
         <li><a href="software.html">Software</a> — updates and restarts</li>
         <li><a href="hmi.html">HMI</a> — maintenance, fullscreen mode, unstick dispense/return flows</li>

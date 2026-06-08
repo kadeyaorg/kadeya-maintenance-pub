@@ -40,12 +40,45 @@
       <h2>Information fields (not buttons)</h2>
       <dl class="button-list">
         <dt>Status</dt>
-        <dd>Bottle washer state (aggregated status topic in the app).</dd>
+        <dd>Bottle washer state, from <code>dishwasher/status</code> (0 = idle, 1 = washing, 2 = error) and the PLC <code>plc/washer</code> state.</dd>
         <dt>Level</dt>
-        <dd>Level from MQTT (<code>dishwasher/level</code> in the data pipeline).</dd>
-        <dt>Error</dt>
-        <dd>Current error code or message (<code>dishwasher/error</code>).</dd>
+        <dd>Detergent levels from <code>dishwasher/level</code> (rinse aid, disinfect, cleaner — in %).</dd>
+        <dt>PLC index / Hood up / Hood down / PLC state</dt>
+        <dd>Live values from <code>plc/washer</code> (index, capacity, hood position, current process).</dd>
       </dl>
+    </section>
+    <section>
+      <h2>Hobart Cloud (desktop only)</h2>
+      <p>
+        The washer is a Hobart dishwasher. When configured, this panel pulls cloud telemetry from
+        the Hobart Cloud-to-Cloud API (separate from the machine MQTT broker, refreshed on a slow
+        cadence imposed by Hobart: temperatures every 60&nbsp;s, errors every 30&nbsp;s, daily data
+        on demand).
+      </p>
+      <dl class="button-list">
+        <dt>Settings</dt>
+        <dd>
+          Enter the Hobart account credentials (username / password) and the Hobart serial of this
+          machine&rsquo;s washer. <strong>The serial is bound to the connected machine</strong> (one
+          washer per machine, distinct serials), so each machine keeps its own binding. Credentials
+          are stored locally on the device, never in the app bundle.
+        </dd>
+        <dt>Discover machines</dt>
+        <dd>Lists the machines registered to the Hobart account so you can pick the correct serial.</dd>
+        <dt>Connection status</dt>
+        <dd>A green / red dot shows whether the Hobart cloud connection (ping) succeeds.</dd>
+      </dl>
+      <p>Once configured, the panel shows:</p>
+      <ul>
+        <li><strong>Temperatures</strong> — wash and rinse temperature, plus the last program run.</li>
+        <li><strong>Active errors</strong> — current Hobart errors (critical ones highlighted in red).</li>
+        <li><strong>Daily consumption</strong> — water, energy, detergent and rinse-aid usage for the day.</li>
+        <li><strong>Hygiene protocol</strong> — recent program runs with their timestamps.</li>
+      </ul>
+      <p class="note">
+        Cloud data complements (does not replace) the live MQTT washer values above. The Hobart
+        panel is available on the desktop app only.
+      </p>
     </section>
   </main>
   <footer class="doc-footer"><a href="index.html">← Contents</a></footer>

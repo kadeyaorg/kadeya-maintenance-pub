@@ -31,7 +31,16 @@
   <main>
     <section>
       <h2>Sequence storage</h2>
-      <p>Named sequences are saved to <code>%APPDATA%\Kadeya\robot_sequences.json</code> (Save / Load / Delete).</p>
+      <dl class="button-list">
+        <dt>Save to file</dt>
+        <dd>Exports the named sequence to a JSON file (native &ldquo;Save as&rdquo; dialog) and keeps it in the in-app list. The file uses the legacy <code>robot_sequences.json</code> format (<code>{ "name": [moves…] }</code>).</dd>
+        <dt>Load file…</dt>
+        <dd>Opens a native file picker and imports sequences from a JSON file (compatible with the legacy <code>robot_sequences.json</code>). Imported sequences are added to the in-app list.</dd>
+        <dt>Saved sequences (dropdown)</dt>
+        <dd>Selecting a saved sequence loads it instantly into the editor.</dd>
+        <dt>Delete</dt>
+        <dd>Removes the named sequence from the in-app list.</dd>
+      </dl>
     </section>
     <section>
       <h2>Playback</h2>

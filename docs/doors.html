@@ -30,21 +30,21 @@
   </nav>
   <main>
     <section>
-      <h2>Return Door</h2>
+      <h2>Return Door (left station door)</h2>
       <dl class="button-list">
         <dt>Open door</dt>
-        <dd>Publishes <code>{"open":true}</code> to <code>hmi/return/door</code> to request opening.</dd>
+        <dd>Publishes <code>{"open":true}</code> to <code>hmi/stationDoor/left</code> to request opening.</dd>
         <dt>Close door</dt>
-        <dd>Publishes <code>{"open":false}</code> to <code>hmi/return/door</code> to request closing.</dd>
+        <dd>Publishes <code>{"open":false}</code> to <code>hmi/stationDoor/left</code> to request closing.</dd>
       </dl>
     </section>
     <section>
-      <h2>Dispense Door</h2>
+      <h2>Dispense Door (right station door)</h2>
       <dl class="button-list">
         <dt>Open door</dt>
-        <dd>Publishes <code>{"open":true}</code> to <code>hmi/dispense/door</code>.</dd>
+        <dd>Publishes <code>{"open":true}</code> to <code>hmi/stationDoor/right</code>.</dd>
         <dt>Close door</dt>
-        <dd>Publishes <code>{"open":false}</code> to <code>hmi/dispense/door</code>.</dd>
+        <dd>Publishes <code>{"open":false}</code> to <code>hmi/stationDoor/right</code>.</dd>
       </dl>
     </section>
     <p class="note">Follow on-site safety rules: command doors only with a clear area and an approved procedure.</p>

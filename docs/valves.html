@@ -30,16 +30,16 @@
   </nav>
   <main>
     <section>
-      <h2>Checkboxes</h2>
-      <p>Select one or more valves to open. Names map to outputs: Main, Still, Carb, Flavor 1–4.</p>
+      <h2>Valve selection</h2>
+      <p>Each valve is shown as a clickable card with its ISA-5.1 symbol. Click a card to toggle it open (highlighted green) or closed. Valves map to outputs: Main, Still, Carb, Flavor 1–4.</p>
     </section>
     <section>
       <h2>Buttons</h2>
       <dl class="button-list">
         <dt>Open selected</dt>
-        <dd>Builds JSON with each valve state: <code>true</code> for checked (open), <code>false</code> for others, then publishes to <code>hmi/actuators_request</code>.</dd>
+        <dd>Builds JSON with each valve state: <code>true</code> for the highlighted (open) valves, <code>false</code> for others, then publishes to <code>hmi/actuators_request</code>.</dd>
         <dt>Close all</dt>
-        <dd>Sends the command that closes all valves (regardless of checkboxes).</dd>
+        <dd>Sends the all-closed state (regardless of selection).</dd>
       </dl>
     </section>
     <p class="note">Exact JSON details are defined in the application module; if unsure, correlate with the MQTT monitor.</p>
